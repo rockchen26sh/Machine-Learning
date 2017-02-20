@@ -51,7 +51,7 @@ def handwritingClassTest():
         fileStr = fileNameStr.split('.')[0]
         classNumStr = int(fileStr.split('_')[0])
         vectorUnderTest = img2vector('testDigits/%s' % fileNameStr)
-        classifierResult = classify0(vectorUnderTest,trainingMat,hwLabels,3)
+        classifierResult = classify0(vectorUnderTest,trainingMat,hwLabels,5)
         print "the classifier came back with: %d, the real answer is: %d" %(classifierResult,classNumStr)
         if (classifierResult != classNumStr):
             errorCount += 1.0
