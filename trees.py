@@ -7,7 +7,7 @@ Created on Thu Feb 09 12:23:48 2017
 
 from math import log
 import operator
-
+import pandas as pd
 def calcShannonEnt(dataSet):
     numEntries = len(dataSet)
     labelCount = {}
@@ -19,7 +19,7 @@ def calcShannonEnt(dataSet):
     shannonEnt = 0.0
     for key in labelCount:
         prob = float(labelCount[key]) / numEntries
-        shannonEnt -= prob * log(prob,2)
+        shannonEnt -= prob * log(prob,2) #同公式 prob为p(xi) 使用for循环累计计算
     return shannonEnt
 
 def createDataSet():
